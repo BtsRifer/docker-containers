@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  python_service:
+    build: . 
+    volumes:
+      - .:/app/python_service
+      - python_service_virtual_env:/app/python_service/.venv
+    working_dir: /app/python_service
+    command: bash -c "export PIPENV_VENV_IN_PROJECT=1\
+              && pipenv install --ignore-pipfile --dev\
+              && echo 'import sys' > test.py\
+              && echo 'print(\"==> ALL DONE WITH SETTING THE VIRTUAL ENVIRONMENT\")' >> test.py\
+              && echo 'print(\"==> LOCATION:\", sys.executable)' >> test.py\
+              && echo 'print(\"==> VERSION:\", sys.version)' >> test.py\
+              && pipenv run python < test.py\
+              && rm test.py"
+    ports:
+      - 5001:80
+
+volumes:
+  python_service_virtual_env:
+    name: python_service_virtual_env
