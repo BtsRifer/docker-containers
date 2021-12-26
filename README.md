@@ -3,7 +3,12 @@ This project provides sample docker container configurations for various service
 
 ### SERVICES
 - Python service: `python_service`
-    - The container contains a python virtual environment with all the dependencies described inside the `Pipfile`.
+    - A container with a python virtual environment with all the dependencies listed inside the `Pipfile`.
+- Golang service: `go_service`
+    - A container with a Go installation with all the dependencies listed inside the `go.mod` file.
+- Django REST with PostgreSQL service: `django_psql_service`
+    - A container with a Django application setup with a PostgreSQL database connection.
+    - Change directory to the service directory, execute `docker compose up` and visit `localhost:8000/admin` (user: admin, pass: admin) to check the application.
 ### TEST THE CONTAINERS
 
 1. Docker desktop should be installed and running on your machine.
