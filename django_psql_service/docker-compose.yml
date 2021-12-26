@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  api:
+    build: .
+    volumes:
+      - .:/app/api
+      - api_virtual_env:/app/api/.venv
+    working_dir: /app/api
+    command: bash -c "export PIPENV_VENV_IN_PROJECT=1;\
+              pipenv install --ignore-pipfile --dev;\
+              pipenv run python api/manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    depends_on:
+      - api_db
+  api_db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=api
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - api_database:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  api_virtual_env:
+    name: api_virtual_env
+  api_database:
+    name: api_database
