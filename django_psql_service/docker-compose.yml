@@ -3,10 +3,13 @@ version: "3.7"
 services:
   api:
     build: .
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-MY_DRAFT_SECRET_KEY}
     volumes:
       - .:/app/api
       - api_virtual_env:/app/api/.venv
     working_dir: /app/api
+    tty: true
     command: bash -c "export PIPENV_VENV_IN_PROJECT=1;\
               pipenv install --ignore-pipfile --dev;\
               pipenv run python api/manage.py runserver 0.0.0.0:8000"
