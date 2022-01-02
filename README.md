@@ -6,6 +6,12 @@ This project provides sample docker container configurations for various service
     - A container with a python virtual environment with all the dependencies listed inside the `Pipfile`.
 - Golang service: `go_service`
     - A container with a Go installation with all the dependencies listed inside the `go.mod` file.
+- PostgreSQL service: `psql_service`
+    - A container with a PostgreSQL database connection. The database is initialized based on the `db/init.sh` file (optional).
+    - To connect to the database:
+        - Change directory to the service directory and execute: `docker compose up`
+        - On a different terminal session, change directory to the service directory and execute: `docker compose exec db psql -U postgres`
+            - Or execute queries outside the container as follow, e.g.: `docker compose exec db psql -U postgres -d test_db -c "select * from hello_world;"`
 - Django REST with PostgreSQL service: `django_psql_service`
     - A container with a Django application setup with a PostgreSQL database connection.
     - The first time that you will run the container, you need to apply the migrations and create a superuser in order to test the app. You can do that as follow:
