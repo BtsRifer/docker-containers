@@ -30,6 +30,5 @@ services:
 
 volumes:
   api_virtual_env:
-    name: api_virtual_env
   api_database:
-    name: api_database
+  
