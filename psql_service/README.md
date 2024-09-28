@@ -1,9 +1,8 @@
-## PostgreSQL service
-A container with a PostgreSQL database connection. 
+## About
+A container with a PostgreSQL database connection. The database is initialized using the `./db/init.sh` file.
 
-## DETAILS
-The database is initialized based on the `./db/init.sh` file (optional).
-To connect to the database:
-- Change directory to the service directory and execute: `docker compose up`
-- On a different terminal session, change directory to the service directory and execute: `docker compose exec db psql -U postgres`
-    - Or execute queries outside the container as follow, e.g.: `docker compose exec db psql -U postgres -d test_db -c "select * from hello_world;"`
+## Run
+1. Execute in terminal: `docker compose up`
+2. Connect to the database: `docker compose exec db psql -U postgres -d test_db`
+    * Or execute queries from outside the container (while the container is running): `docker compose exec db psql -U postgres -d test_db -c "select * from hello_world;"`
+    * Or connect to the database from a client using the URI: `postgresql://postgres:postgres@127.0.0.1:5432`

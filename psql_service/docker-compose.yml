@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   db:
-    image: postgres
+    image: postgres:17.0-bullseye
     environment:
       - POSTGRES_DB=test_db
       - POSTGRES_USER=postgres
