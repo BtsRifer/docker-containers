@@ -1,15 +1,19 @@
-### SERVICE RUN
-1. Execute on terminal: `docker compose up`
+### About
+A container with a Python virtual environment, including all dependencies listed in the `Pipfile`.
 
-The following logs should appear indicated that the container is properly setup:
+### Run
+1. Execute in terminal: `docker compose up`
+
+The following logs should appear, indicating that the container is properly set up:
 
 ```bash
 python_service-1  | ==> ALL DONE WITH SETTING UP THE VIRTUAL ENVIRONMENT
 python_service-1  | ==> LOCATION: /app/python_service/.venv/bin/python
-python_service-1  | ==> VERSION: 3.12.6 (main, Sep 27 2024, 06:08:29) [GCC 10.2.1 20210110]
+python_service-1  | ==> VERSION: 3.12.6 ...
 ```
 
-* To have a look into the virtual environment setup execute:
-    * Enter the container: `docker compose run python_service bash`
-    * Activate the virtual environment inside the container: `source .venv/bin/activate`
-    * Take a look into the dependencies: `pip freeze`
+To inspect the virtual environment setup:
+
+* Enter the container: `docker compose run python_service bash`
+* Activate the virtual environment inside the container: `source .venv/bin/activate`
+* View the installed dependencies: `pip freeze`
