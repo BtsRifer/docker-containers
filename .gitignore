@@ -1,2 +1,4 @@
 # Virtual environments
 .venv/
+go.sum
+Pipfile.lock

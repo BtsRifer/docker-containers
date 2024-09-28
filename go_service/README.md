@@ -7,13 +7,12 @@ A container with a Go installation, including all dependencies specified in the 
 The following logs should appear, indicating that the container is properly set up:
 
 ```bash
-python_service-1  | ==> ALL DONE WITH SETTING UP THE VIRTUAL ENVIRONMENT
-python_service-1  | ==> LOCATION: /app/python_service/.venv/bin/python
-python_service-1  | ==> VERSION: 3.12.6 ...
+go_service-1  | ==> ALL DONE WITH SETTING UP THE GO ENVIRONMENT.
+go_service-1  | ==> LOCATION: /go
+go_service-1  | ==> VERSION: go version go1.23.1 linux/amd64
 ```
 
-To inspect the virtual environment setup:
+To inspect the environment setup:
 
-* Enter the container: `docker compose run python_service bash`
-* Activate the virtual environment inside the container: `source .venv/bin/activate`
-* View the installed dependencies: `pip freeze`
+* Enter the container: `docker compose run go_service bash`
+* List the installed packages: `go list ...`
