@@ -10,15 +10,14 @@ services:
       - api_virtual_env:/app/api/.venv
     working_dir: /app/api
     tty: true
-    command: bash -c "export PIPENV_VENV_IN_PROJECT=1;\
-              pipenv install --ignore-pipfile --dev;\
+    command: bash -c "pipenv install --ignore-pipfile --dev;\
               pipenv run python api/manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
     depends_on:
       - api_db
   api_db:
-    image: postgres
+    image: postgres:17.0-bullseye
     environment:
       - POSTGRES_DB=api
       - POSTGRES_USER=postgres
