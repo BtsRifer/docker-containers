@@ -7,8 +7,7 @@ services:
       - .:/app/python_service
       - python_service_virtual_env:/app/python_service/.venv
     working_dir: /app/python_service
-    command: bash -c "export PIPENV_VENV_IN_PROJECT=1\
-              && pipenv install --ignore-pipfile --dev\
+    command: bash -c "pipenv install --ignore-pipfile --dev\
               && pipenv run python main.py"
     ports:
       - 5001:80

@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   go_service:
-    image: golang:1.22-bullseye
+    image: golang:1.23-bullseye
     build: .
     volumes:
       - .:/app/go_service
