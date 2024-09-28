@@ -1,8 +1,8 @@
-### About
+## About
 
 This project offers sample `Docker container` configurations for various services.
 
-### Service Details
+## Service Details
 
 1. **Python Service**: `python_service`
    - A container with a Python virtual environment
@@ -14,13 +14,13 @@ This project offers sample `Docker container` configurations for various service
 
 3. **PostgreSQL Service**: `psql_service`
    - A container with a PostgreSQL database connection
-   - The database is initialized based on the `./db/init.sh` file (optional)
+   - The database is initialized based on the `./db/init.sh` file
 
 4. **Django REST with PostgreSQL Service**: `django_psql_service`
    - A container with a Django application setup
    - Includes a PostgreSQL database connection
 
-### Run
+## Run
 
 To test any service container:
 

@@ -1,8 +1,11 @@
 ### About
+
 A container with a Go installation, including all dependencies specified in the `go.mod` file
 
 ### Run
-1. Execute in terminal: `docker compose up`
+
+1. Navigate to the container's folder: `cd /go_service`.
+2. Execute in terminal: `docker compose up`
 
 The following logs should appear, indicating that the container is properly set up:
 

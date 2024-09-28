@@ -1,7 +1,10 @@
 ### About
+
 A container with a Python virtual environment, including all dependencies listed in the `Pipfile`.
 
 ### Run
+
+1. Navigate to the container's folder: `cd /python_service`.
 1. Execute in terminal: `docker compose up`
 
 The following logs should appear, indicating that the container is properly set up:
