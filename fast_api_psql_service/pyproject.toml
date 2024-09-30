@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-crud"
+version = "0.1.0"
+description = "Sample FastAPI CRUD API with SQLModel, Pydantic and a container database setup, e.g. PostgreSQL"
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.0"}
+sqlmodel = "^0.0.22"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.8.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
